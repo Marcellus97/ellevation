@@ -2,18 +2,18 @@ from elevator import Elevator
 from request import Request
 
 class Controller():
-    FLOORS = 10
-
     def __init__(self):
         self.time = 0
         # One elevator car with 10 floors
-        self.elevator = Elevator(Controller.FLOORS)
+        self.elevator = Elevator(10)
     
     def parse_request(self, request_string) -> Request:
         r :list[str] = request_string.split(' ')
         floor = int(r[0].strip())
-        if floor < 0 or floor > Controller.FLOORS - 1:
-            raise Exception(f'{floor} is out of range, max floors is {Controller.FLOORS}')
+
+        if floor < 0 or floor > self.elevator.size - 1:
+            raise Exception(f'{floor} is out of range, max floors is {self.elevator.size}')
+
         direction = Request.Direction[r[1].strip().upper()]
         return Request(self.time, floor, direction)
 

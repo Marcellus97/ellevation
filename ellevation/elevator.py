@@ -15,7 +15,6 @@ class Elevator():
         self.size : int = size
         self.currentFloor : int = 0
         self.status = Elevator.Status.IDLE
-        self.capacity = 0
 
         # for speedy lookup
         self.requests_above: list[tuple[int, Request]] = list()
