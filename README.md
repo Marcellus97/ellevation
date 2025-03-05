@@ -1,5 +1,6 @@
 # Assumptions
 * Requests can be entered at the same time
+    * But `inside_request.time > outside_request.time` ex: user on floor 5 presses up, gets on elevator, presses 7
 * One elevator car
 * 10 floors
 * did not need to calculate capacity of passengers
